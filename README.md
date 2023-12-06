@@ -1,10 +1,15 @@
 # About
-This is a Docker image for HuggingFace embedding models exposed with a Python HTTP API 
+This is a Docker image for HuggingFace embedding models exposed with a Python HTTP API. Default behavior will be to pull sentence-transformers/all-mpnet-base-v2 however you can overide this startup command to any model hosted on HuggingFace repository.
 
 ## Docker
-docker run -p 5000:5000 your-app-name python app.py custom-model-name
+Default run
+docker run -p 5000:5000 eava-embeddings
+
+Run with a specified model
+docker run -p 5000:5000 eava-embeddings sentence-transformers/all-mpnet-base-v2
 
 ## Example Request
+```
 POST http://127.0.0.1:5000/embed
 {
     "sentences": [
@@ -12,3 +17,4 @@ POST http://127.0.0.1:5000/embed
         "Each sentence is converted"
         ]
 }
+```
