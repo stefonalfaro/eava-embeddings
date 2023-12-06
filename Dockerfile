@@ -10,4 +10,6 @@ RUN pip install Flask
 
 EXPOSE 5000
 
-CMD ["python", "embeddingServer.py", "sentence-transformers/all-mpnet-base-v2"]
+ENTRYPOINT ["python", "embeddingServer.py"]
+
+CMD ["sentence-transformers/all-mpnet-base-v2"]
