@@ -1,6 +1,12 @@
 # About
 This is a Docker image for HuggingFace embedding models exposed with a Python HTTP API. Default behavior will be to pull sentence-transformers/all-mpnet-base-v2 however you can overide this startup command to any model hosted on HuggingFace repository.
 
+## Config
+/app/config contains a file called config.json, you will need to mount a volumne to the config folder.
+
+docker run -p 5000:5000 -v /path/to/local/config:/app/config eava-embeddings
+
+
 ## Docker
 Default run
 docker run -p 5000:5000 eava-embeddings
