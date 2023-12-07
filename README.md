@@ -8,6 +8,9 @@ docker run -p 5000:5000 eava-embeddings
 Run with a specified model
 docker run -p 5000:5000 eava-embeddings sentence-transformers/all-mpnet-base-v2
 
+## How to Build
+sudo docker build . -t stefonalfaro/eava-embeddings
+
 ## Example Request
 ```
 POST http://127.0.0.1:5000/embed
@@ -18,3 +21,6 @@ POST http://127.0.0.1:5000/embed
         ]
 }
 ```
+
+## To use with LangChain
+Create a custom class that extends the Embeddings base. Use the eavaEmbeddings.ts as the example.
